@@ -1,4 +1,4 @@
-" Hello，我是PowerVim的作者，程序员Carl，欢迎关注我的微信公众号：代码随想录 
+
 "
 " 定义快捷键的前缀，即<Leader>
 let mapleader=";"
@@ -39,10 +39,10 @@ set nocp
 
 "set encoding=utf-8
 ""set encoding=gb2312
-set langmenu=zh_CN.gb2312
-language message zh_CN.gb2312
+set langmenu=zh_CN.UTF-8
+language message zh_CN.UTF-8
 
-set fileencoding=gbk2312
+set fileencoding=UTF-8
 set ts=4
 set sw=4
 set smartindent
@@ -214,7 +214,6 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 
 set ruler           " 显示标尺"
-autocmd InsertEnter * se cul    " 用浅色高亮当前行"
 set shortmess=atI   " 启动的时候不显示那个援助乌干达儿童的提示
 
 " :colorscheme desert     " 设置主题
@@ -247,23 +246,7 @@ autocmd BufNewFile *.cpp,*.[ch],*.sh,*.Java,*.go exec ":call SetTitle()"
 func SetTitle()
     "如果文件类型为.sh文件
     if &filetype == 'sh'
-        call setline(1,"\#########################################################################")
-        call append(line("."),   "\# File Name:    ".expand("%"))
-        call append(line(".")+1, "\# Author:       程序员Carl")
-        call append(line(".")+2, "\# mail:         programmercarl@163.com")
-        call append(line(".")+3, "\# Created Time: ".strftime("%c"))
-        call append(line(".")+4, "\#########################################################################")
-        call append(line(".")+5, "\#!/bin/bash")
-        call append(line(".")+6, "")
     else
-        call setline(1, "/* ************************************************************************")
-        call append(line("."),   "> File Name:     ".expand("%"))
-        call append(line(".")+1, "> Author:        程序员Carl")
-        call append(line(".")+2, "> 微信公众号:    代码随想录")
-        call append(line(".")+3, "> Created Time:  ".strftime("%c"))
-        call append(line(".")+4, "> Description:   ")
-        call append(line(".")+5, " ************************************************************************/")
-        call append(line(".")+6, "")
     endif
     "新建文件后，自动定位到文件末尾
     autocmd BufNewFile * normal G
@@ -310,10 +293,8 @@ func SetCC()
     call append(line("."), "// vim: et tw=100 ts=4 sw=4 cc=120")  
 endfunc
 
-" Hello，我是PowerVim的作者，程序员Carl，欢迎关注我的微信公众号：代码随想录 
 
 " 使用的背景主题
-colorscheme Monokai_Gavin
 " 添加自动补全字典
 au FileType php setlocal dict+=~/.vim/dictionary/php_keywords_list.txt
 au FileType cpp setlocal dict+=~/.vim/dictionary/cpp_keywords_list.txt
