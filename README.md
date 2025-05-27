@@ -1,15 +1,15 @@
-
 转自 https://github.com/youngyangyang04/PowerVim
-安装
+# 安装
 ```bash
 git clone https://github.com/youngyangyang04/PowerVim.git
 cd PowerVim
 bash install.sh
 ```
 # 卸载 
+```
 sh uninstall.sh
 ```
-
+#usage
 ```
 正常模式下的快捷键（非插入模式）
 ;n              // 打开文件目录树显示在屏幕左侧
